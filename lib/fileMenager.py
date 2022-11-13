@@ -3,7 +3,7 @@ import os
 import json
 
 def download():
-    
+
     url = 'https://event.brawlstars.com/assets/events/cards/en.json'
     filename_01 = 'texts.json'
 
@@ -14,3 +14,8 @@ def download():
         file.close()
     
     os.system('move texts.json webCache/ && cls')
+
+    with open('webCache\\texts.json', 'r+') as file:
+        fData = json.load(file)
+        file.seek(0)
+        json.dump(fData, file, indent=4)
