@@ -1,4 +1,5 @@
 from lib import fileMenager
+from  colorama import Fore
 import os
 import json
 
@@ -65,64 +66,136 @@ questionNum = 1
 
 while questionNum >=1 and questionNum <= 9:
     questionNumSTR = str(questionNum)
+
     try:
         qTitle = quizzDB['q000'+questionNumSTR+'_title']
+        qAnswer1 = quizzDB['q000'+questionNumSTR+'_answer_1']
+        qAnswer2 = quizzDB['q000'+questionNumSTR+'_answer_2']
+        qAnswer3 = quizzDB['q000'+questionNumSTR+'_answer_3']
+        qAnswer4 = quizzDB['q000'+questionNumSTR+'_answer_4']
     except KeyError:
         pass
+
     try:
-        print(qTitle)
+        print(
+            Fore.GREEN+questionNumSTR+'. '+qTitle+'\n'+Fore.RESET,
+            Fore.CYAN+'    A. '+qAnswer1+'\n'+Fore.RESET,
+            Fore.CYAN+'    B. '+qAnswer2+'\n'+Fore.RESET,
+            Fore.CYAN+'    C. '+qAnswer3+'\n'+Fore.RESET,
+            Fore.CYAN+'    D. '+qAnswer4+Fore.RESET+'\n'
+        )
     except NameError:
         pass
+
     try:
         del qTitle
+        del qAnswer1
+        del qAnswer2
+        del qAnswer3
+        del qAnswer4
     except NameError:
         pass
+
     questionNum = questionNum+1
 
 while questionNum >=10 and questionNum <=99:
     questionNumSTR = str(questionNum)
+
     try:
         qTitle = quizzDB['q00'+questionNumSTR+'_title']
+        qAnswer1 = quizzDB['q00'+questionNumSTR+'_answer_1']
+        qAnswer2 = quizzDB['q00'+questionNumSTR+'_answer_2']
+        qAnswer3 = quizzDB['q00'+questionNumSTR+'_answer_3']
+        qAnswer4 = quizzDB['q00'+questionNumSTR+'_answer_4']
     except KeyError:
         pass
+
     try:
-        print(qTitle)
+        print(
+            Fore.GREEN+questionNumSTR+'. '+qTitle+'\n'+Fore.RESET,
+            Fore.CYAN+'    A. '+qAnswer1+'\n'+Fore.RESET,
+            Fore.CYAN+'    B. '+qAnswer2+'\n'+Fore.RESET,
+            Fore.CYAN+'    C. '+qAnswer3+'\n'+Fore.RESET,
+            Fore.CYAN+'    D. '+qAnswer4+Fore.RESET+'\n'
+        )
     except NameError:
         pass
+
     try:
         del qTitle
+        del qAnswer1
+        del qAnswer2
+        del qAnswer3
+        del qAnswer4
     except NameError:
         pass
+
     questionNum = questionNum+1
 
 while questionNum >=100 and questionNum <=999:
     questionNumSTR = str(questionNum)
+
     try:
         qTitle = quizzDB['q0'+questionNumSTR+'_title']
+        qAnswer1 = quizzDB['q0'+questionNumSTR+'_answer_1']
+        qAnswer2 = quizzDB['q0'+questionNumSTR+'_answer_2']
+        qAnswer3 = quizzDB['q0'+questionNumSTR+'_answer_3']
+        qAnswer4 = quizzDB['q0'+questionNumSTR+'_answer_4']
     except KeyError:
         pass
+
     try:
-        print(qTitle)
+        print(
+            Fore.GREEN+questionNumSTR+'. '+qTitle+'\n'+Fore.RESET,
+            Fore.CYAN+'    A. '+qAnswer1+'\n'+Fore.RESET,
+            Fore.CYAN+'    B. '+qAnswer2+'\n'+Fore.RESET,
+            Fore.CYAN+'    C. '+qAnswer3+'\n'+Fore.RESET,
+            Fore.CYAN+'    D. '+qAnswer4+Fore.RESET+'\n'
+        )
     except NameError:
         pass
+
     try:
         del qTitle
+        del qAnswer1
+        del qAnswer2
+        del qAnswer3
+        del qAnswer4
     except NameError:
         pass
+
     questionNum = questionNum+1
 
 while questionNum >=1000 and questionNum <=9999:
     questionNumSTR = str(questionNum)
+
     try:
         qTitle = quizzDB['q'+questionNumSTR+'_title']
+        qAnswer1 = quizzDB['q'+questionNumSTR+'_answer_1']
+        qAnswer2 = quizzDB['q'+questionNumSTR+'_answer_2']
+        qAnswer3 = quizzDB['q'+questionNumSTR+'_answer_3']
+        qAnswer4 = quizzDB['q'+questionNumSTR+'_answer_4']
     except KeyError:
         pass
+
     try:
-        print(qTitle)
+        print(
+            Fore.GREEN+questionNumSTR+'. '+qTitle+'\n'+Fore.RESET,
+            Fore.CYAN+'    A. '+qAnswer1+'\n'+Fore.RESET,
+            Fore.CYAN+'    B. '+qAnswer2+'\n'+Fore.RESET,
+            Fore.CYAN+'    C. '+qAnswer3+'\n'+Fore.RESET,
+            Fore.CYAN+'    D. '+qAnswer4+Fore.RESET+'\n'
+        )
     except NameError:
         pass
+
     try:
         del qTitle
+        del qAnswer1
+        del qAnswer2
+        del qAnswer3
+        del qAnswer4
     except NameError:
         pass
+
     questionNum = questionNum+1
