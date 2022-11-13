@@ -66,7 +66,6 @@ questionNum = 1
 
 while questionNum >=1 and questionNum <= 9:
     questionNumSTR = str(questionNum)
-
     try:
         qTitle = quizzDB['q000'+questionNumSTR+'_title']
         qAnswer1 = quizzDB['q000'+questionNumSTR+'_answer_1']
@@ -75,7 +74,6 @@ while questionNum >=1 and questionNum <= 9:
         qAnswer4 = quizzDB['q000'+questionNumSTR+'_answer_4']
     except KeyError:
         pass
-
     try:
         print(
             Fore.GREEN+questionNumSTR+'. '+qTitle+'\n'+Fore.RESET,
@@ -86,7 +84,6 @@ while questionNum >=1 and questionNum <= 9:
         )
     except NameError:
         pass
-
     try:
         del qTitle
         del qAnswer1
@@ -95,12 +92,10 @@ while questionNum >=1 and questionNum <= 9:
         del qAnswer4
     except NameError:
         pass
-
     questionNum = questionNum+1
 
 while questionNum >=10 and questionNum <=99:
     questionNumSTR = str(questionNum)
-
     try:
         qTitle = quizzDB['q00'+questionNumSTR+'_title']
         qAnswer1 = quizzDB['q00'+questionNumSTR+'_answer_1']
@@ -109,7 +104,6 @@ while questionNum >=10 and questionNum <=99:
         qAnswer4 = quizzDB['q00'+questionNumSTR+'_answer_4']
     except KeyError:
         pass
-
     try:
         print(
             Fore.GREEN+questionNumSTR+'. '+qTitle+'\n'+Fore.RESET,
@@ -120,7 +114,6 @@ while questionNum >=10 and questionNum <=99:
         )
     except NameError:
         pass
-
     try:
         del qTitle
         del qAnswer1
@@ -129,12 +122,10 @@ while questionNum >=10 and questionNum <=99:
         del qAnswer4
     except NameError:
         pass
-
     questionNum = questionNum+1
 
 while questionNum >=100 and questionNum <=999:
     questionNumSTR = str(questionNum)
-
     try:
         qTitle = quizzDB['q0'+questionNumSTR+'_title']
         qAnswer1 = quizzDB['q0'+questionNumSTR+'_answer_1']
@@ -143,7 +134,6 @@ while questionNum >=100 and questionNum <=999:
         qAnswer4 = quizzDB['q0'+questionNumSTR+'_answer_4']
     except KeyError:
         pass
-
     try:
         print(
             Fore.GREEN+questionNumSTR+'. '+qTitle+'\n'+Fore.RESET,
@@ -154,7 +144,6 @@ while questionNum >=100 and questionNum <=999:
         )
     except NameError:
         pass
-
     try:
         del qTitle
         del qAnswer1
@@ -163,12 +152,10 @@ while questionNum >=100 and questionNum <=999:
         del qAnswer4
     except NameError:
         pass
-
     questionNum = questionNum+1
 
 while questionNum >=1000 and questionNum <=9999:
     questionNumSTR = str(questionNum)
-
     try:
         qTitle = quizzDB['q'+questionNumSTR+'_title']
         qAnswer1 = quizzDB['q'+questionNumSTR+'_answer_1']
@@ -177,7 +164,6 @@ while questionNum >=1000 and questionNum <=9999:
         qAnswer4 = quizzDB['q'+questionNumSTR+'_answer_4']
     except KeyError:
         pass
-
     try:
         print(
             Fore.GREEN+questionNumSTR+'. '+qTitle+'\n'+Fore.RESET,
@@ -188,7 +174,6 @@ while questionNum >=1000 and questionNum <=9999:
         )
     except NameError:
         pass
-
     try:
         del qTitle
         del qAnswer1
@@ -197,5 +182,4 @@ while questionNum >=1000 and questionNum <=9999:
         del qAnswer4
     except NameError:
         pass
-
     questionNum = questionNum+1
