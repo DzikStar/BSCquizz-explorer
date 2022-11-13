@@ -1,5 +1,6 @@
 from lib import fileMenager
 import os
+import json
 
 if os.path.exists('webCache') ==  False:
     os.system('md webCache')
@@ -55,3 +56,7 @@ if langPick == 13: #korean
     lang = str('kr')
 
 fileMenager.downloadTexts(str(lang))
+
+jsonTexts = open('webCache\\texts.json')
+jsonContent = json.load(jsonTexts)
+print(jsonContent)

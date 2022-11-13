@@ -19,4 +19,5 @@ def downloadTexts(lang):
         fData = json.load(file)
         file.seek(0)
         json.dump(fData, file, indent=4)
+        file.close()
         
