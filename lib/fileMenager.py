@@ -2,9 +2,9 @@ import requests
 import os
 import json
 
-def download():
+def download(lang):
 
-    url = 'https://event.brawlstars.com/assets/events/cards/en.json'
+    url = 'https://event.brawlstars.com/assets/events/cards/'+lang+'.json'
     filename_01 = 'texts.json'
 
     req = requests.get(url, 'html.parser')
