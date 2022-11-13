@@ -55,8 +55,74 @@ if langPick == 12: #???
 if langPick == 13: #korean
     lang = str('kr')
 
+os.system('cls')
 fileMenager.downloadTexts(str(lang))
 
 jsonTexts = open('webCache\\texts.json')
-jsonContent = json.load(jsonTexts)
-print(jsonContent)
+quizzDB = json.load(jsonTexts)
+
+questionNum = 1
+
+while questionNum >=1 and questionNum <= 9:
+    questionNumSTR = str(questionNum)
+    try:
+        qTitle = quizzDB['q000'+questionNumSTR+'_title']
+    except KeyError:
+        pass
+    try:
+        print(qTitle)
+    except NameError:
+        pass
+    try:
+        del qTitle
+    except NameError:
+        pass
+    questionNum = questionNum+1
+
+while questionNum >=10 and questionNum <=99:
+    questionNumSTR = str(questionNum)
+    try:
+        qTitle = quizzDB['q00'+questionNumSTR+'_title']
+    except KeyError:
+        pass
+    try:
+        print(qTitle)
+    except NameError:
+        pass
+    try:
+        del qTitle
+    except NameError:
+        pass
+    questionNum = questionNum+1
+
+while questionNum >=100 and questionNum <=999:
+    questionNumSTR = str(questionNum)
+    try:
+        qTitle = quizzDB['q0'+questionNumSTR+'_title']
+    except KeyError:
+        pass
+    try:
+        print(qTitle)
+    except NameError:
+        pass
+    try:
+        del qTitle
+    except NameError:
+        pass
+    questionNum = questionNum+1
+
+while questionNum >=1000 and questionNum <=9999:
+    questionNumSTR = str(questionNum)
+    try:
+        qTitle = quizzDB['q'+questionNumSTR+'_title']
+    except KeyError:
+        pass
+    try:
+        print(qTitle)
+    except NameError:
+        pass
+    try:
+        del qTitle
+    except NameError:
+        pass
+    questionNum = questionNum+1
