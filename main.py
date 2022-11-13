@@ -41,7 +41,7 @@ if langPick == 6: #polish
     lang = str('pl') 
 if langPick == 7: #portugal
     lang = str('pt')
-if langPick == 8: #trixall
+if langPick == 8: #turkey
     lang = str('tr')
 if langPick == 9: #russian
     lang = str('ru')
