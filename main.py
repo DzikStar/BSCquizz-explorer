@@ -10,19 +10,19 @@ print(
     '-----------------------------\n'
     '| INDEX |     LANGUAGE      |\n'
     '-----------------------------\n'
-    '|   1   | English           |'+'-works\n'
-    '|   2   | Español           |'+'-error\n'
-    '|   3   | Français          |'+'-error\n'
-    '|   4   | Deutsch           |'+'-works\n'
-    '|   5   | Italiano          |'+'-error\n'
-    '|   6   | Polski            |'+'-works\n'
-    '|   7   | Português         |'+'-error\n'
-    '|   8   | Türkçe            |'+'-error\n'
-    '|   9   | Pусский           |'+'-error\n'
-    '|   10  | 日本語            |'+'-error\n'
-    '|   11  | 简体中文          |'+'-error\n'
-    '|   12  | 繁體中文          |'+'-error\n'
-    '|   13  | 한국어            |'+'-error\n'
+    '|   1   | English           |\n'
+    '|   2   | Español           |\n'
+    '|   3   | Français          |\n'
+    '|   4   | Deutsch           |\n'
+    '|   5   | Italiano          |\n'
+    '|   6   | Polski            |\n'
+    '|   7   | Português         |\n'
+    '|   8   | Türkçe            |\n'
+    '|   9   | Pусский           |\n'
+    '|   10  | 日本語            |\n'
+    '|   11  | 简体中文          |\n'
+    '|   12  | 繁體中文          |\n'
+    '|   13  | 한국어            |\n'
     '-----------------------------'
 )
 langPick = int(input('QUIZZ Language: '))
@@ -54,4 +54,4 @@ if langPick == 12: #???
 if langPick == 13: #korean
     lang = str('kr')
 
-fileMenager.download(str(lang))
+fileMenager.downloadTexts(str(lang))
