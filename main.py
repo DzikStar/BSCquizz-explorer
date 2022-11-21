@@ -1,10 +1,8 @@
 from lib import fileMenager
-from  colorama import Fore
-import os
-import json
+from colorama import Fore
 
-if os.path.exists('webCache') ==  False:
-    os.system('md webCache')
+# if os.path.exists('webCache') ==  False:
+#     os.system('md webCache')
 
 print(
     '-----------------------------\n'
@@ -28,39 +26,47 @@ print(
     '-----------------------------'
 )
 langPick = int(input('QUIZZ Language: '))
+while langPick < 1 or langPick > 13:
+    print("Out of range. Please pick a language number from 1 to 13.")
+    langPick = int(input('QUIZZ Language: '))
 
-if langPick == 1: #english
-    lang = str('en')
-if langPick == 2: #spanish
-    lang = str('es')
-if langPick == 3: #french
-    lang = str('fr')
-if langPick == 4: #germany
-    lang = str('de') 
-if langPick == 5: #italy
-    lang = str('it') 
-if langPick == 6: #polish
-    lang = str('pl') 
-if langPick == 7: #portugal
-    lang = str('pt')
-if langPick == 8: #turkey
-    lang = str('tr')
-if langPick == 9: #russian
-    lang = str('ru')
-if langPick == 10: #japanesee
-    lang = str('jp')
-if langPick == 11: #???
-    lang = str('zh-sc')
-if langPick == 12: #???
-    lang = str('zh-tc')
-if langPick == 13: #korean
-    lang = str('kr')
+langList = ['en','es','fr','de','it','pl','pt','tr','ru','jp','zh-sc','zh-tc','kr']
+lang = langList[langPick - 1]
 
-os.system('cls')
-fileMenager.downloadTexts(str(lang))
+quizzDB = fileMenager.downloadTextsToDict(lang)
 
-jsonTexts = open('webCache\\texts.json')
-quizzDB = json.load(jsonTexts)
+# if langPick == 1: #english
+#     lang = str('en')
+# if langPick == 2: #spanish
+#     lang = str('es')
+# if langPick == 3: #french
+#     lang = str('fr')
+# if langPick == 4: #germany
+#     lang = str('de') 
+# if langPick == 5: #italy
+#     lang = str('it') 
+# if langPick == 6: #polish
+#     lang = str('pl') 
+# if langPick == 7: #portugal
+#     lang = str('pt')
+# if langPick == 8: #turkey
+#     lang = str('tr')
+# if langPick == 9: #russian
+#     lang = str('ru')
+# if langPick == 10: #japanesee
+#     lang = str('jp')
+# if langPick == 11: #simplified chinese
+#     lang = str('zh-sc')
+# if langPick == 12: #traditional chinese
+#     lang = str('zh-tc')
+# if langPick == 13: #korean
+#     lang = str('kr')
+
+# os.system('cls')
+# fileMenager.downloadTexts(str(lang))
+
+# jsonTexts = open('webCache\\texts.json')
+# quizzDB = json.load(jsonTexts)
 
 questionNum = 1
 
