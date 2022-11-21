@@ -20,4 +20,17 @@ def downloadTexts(lang):
         file.seek(0)
         json.dump(fData, file, indent=4)
         file.close()
-        
+
+
+def downloadTextsToDict(lang: str) -> dict:
+    """Download text and return as a python dictionary
+
+    Args:
+        lang (str): language
+
+    Returns:
+        dict: dictionary for question data
+    """
+    url = f'https://event.brawlstars.com/assets/events/cards/{lang}.json'
+    req = requests.get(url, 'html.parser')
+    return req.json() 
