@@ -1,9 +1,17 @@
+# ##############################################
+# ####      Tool created by LeakBrawl       ####
+# ##############################################
+# TODO: Version Verify
+# TODO: Patch Notes
+# TODO: Code beautify
+
 from  colorama import Fore
 import os
 import json
 import requests
 
-def downloadTexts(lang):
+def downloadAssets(lang):
+    import json
 
     url = 'https://event.brawlstars.com/assets/events/cards/'+lang+'.json'
     filename_01 = 'texts.json'
@@ -22,9 +30,59 @@ def downloadTexts(lang):
         json.dump(fData, file, indent=4)
         file.close()
 
+def langSet(lang):
+    from colorama import Fore
+
+    if lang == 1: #english
+        print(Fore.RED + '[!] ' + Fore.RESET + 'Downloading English language quizz')
+        downloadAssets(str('en'))
+    if lang == 2: #spanish
+        print(Fore.RED + '[!] ' + Fore.RESET + 'Downloading Spanish language quizz')
+        downloadAssets(str('es'))
+    if lang == 3: #french
+        print(Fore.RED + '[!] ' + Fore.RESET + 'Downloading French language quizz')
+        downloadAssets(str('fr'))
+    if lang == 4: #germany
+        print(Fore.RED + '[!] ' + Fore.RESET + 'Downloading Germany language quizz')
+        downloadAssets(str('de'))
+    if lang == 5: #italy
+        print(Fore.RED + '[!] ' + Fore.RESET + 'Downloading Italy language quizz')
+        downloadAssets(str('it')) 
+    if lang == 6: #polish
+        print(Fore.RED + '[!] ' + Fore.RESET + 'Downloading Polish language quizz')
+        downloadAssets(str('pl')) 
+    if lang == 7: #portugal
+        print(Fore.RED + '[!] ' + Fore.RESET + 'Downloading Portugal language quizz')
+        downloadAssets(str('pt'))
+    if lang == 8: #turkey
+        print(Fore.RED + '[!] ' + Fore.RESET + 'Downloading Turkey language quizz')
+        downloadAssets(str('tr'))
+    if lang == 9: #russian
+        print(Fore.RED + '[!] ' + Fore.RESET + 'Downloading Russian language quizz')
+        downloadAssets(str('ru'))
+    if lang == 10: #japanesee
+        print(Fore.RED + '[!] ' + Fore.RESET + 'Downloading Japanesee language quizz')
+        downloadAssets(str('jp'))
+    if lang == 11: #???
+        print(Fore.RED + '[!] ' + Fore.RESET + 'Downloading Chinesee language quizz')
+        downloadAssets(str('zh-sc'))
+    if lang == 12: #???
+        print(Fore.RED + '[!] ' + Fore.RESET + 'Downloading Chinesee language quizz')
+        downloadAssets(str('zh-tc'))
+    if lang == 13: #korean
+        print(Fore.RED + '[!] ' + Fore.RESET + 'Downloading Korean language quizz')
+        downloadAssets(str('kr'))
+
 def main():
+    import json
+
     if os.path.exists('webCache') ==  False:
         os.system('md webCache')
+    
+    with open('config.json', 'r+', encoding="utf8") as configData:
+        fData = json.load(configData)
+        configData.close()
+        appVersion = fData['version']
 
     print(
         '-----------------------------\n'
@@ -45,42 +103,19 @@ def main():
         '|   11  | 简体中文          |\n'
         '|   12  | 繁體中文          |\n'
         '|   13  | 한국어            |\n'
-        '-----------------------------'
+        '-----------------------------\n'
+        f'Tool Version: {appVersion}'
     )
     langPick = int(input('QUIZZ Language: '))
 
-    if langPick == 1: #english
-        lang = str('en')
-    if langPick == 2: #spanish
-        lang = str('es')
-    if langPick == 3: #french
-        lang = str('fr')
-    if langPick == 4: #germany
-        lang = str('de') 
-    if langPick == 5: #italy
-        lang = str('it') 
-    if langPick == 6: #polish
-        lang = str('pl') 
-    if langPick == 7: #portugal
-        lang = str('pt')
-    if langPick == 8: #turkey
-        lang = str('tr')
-    if langPick == 9: #russian
-        lang = str('ru')
-    if langPick == 10: #japanesee
-        lang = str('jp')
-    if langPick == 11: #???
-        lang = str('zh-sc')
-    if langPick == 12: #???
-        lang = str('zh-tc')
-    if langPick == 13: #korean
-        lang = str('kr')
+    langSet(langPick)
 
     os.system('cls')
-    downloadTexts(str(lang))
 
     jsonTexts = open('webCache\\texts.json')
     quizzDB = json.load(jsonTexts)
+    jsonTexts.close()
+    os.system('rmdir /s /q webCache')
 
     questionNum = 1
 
